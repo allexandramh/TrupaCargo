@@ -1,20 +1,9 @@
-(function($, document, window){
-
-	$(document).ready(function(){
-
-		$("[data-background]").each(function(){
-			var retina = window.devicePixelRatio > 1;
-			var bg = $(this).data("background");
-			if( retina ){
-				var retinabg = bg.replace(".jpg","@2x.jpg");
-				$(this).css("background-image","url("+retinabg+")");	
-			} else{
-				$(this).css("background-image","url("+bg+")");
-			}
-			
-		});
-
-		$("[data-bg-color]").each(function(){
+$(document).ready(function(){
+    $("[data-background]").each(function(){
+        var bg = $(this).data("background");
+        $(this).css("background-image", "url(" + bg + ")");
+    });
+});		$("[data-bg-color]").each(function(){
 			var bg = $(this).data("bg-color");
 			$(this).css("background-color",bg);
 		});
